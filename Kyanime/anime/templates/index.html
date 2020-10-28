@@ -1,0 +1,2041 @@
+{% extends "base_generic.html" %} {% block content %}
+
+<!DOCTYPE html>
+
+<html lang="es" class="container-bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Estilos -->
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href=" {% static 'css/estilos.css' %}"
+    />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <a id="arriba" title="Back to top" href=""
+      ><img src="{% static 'img/up.png' %}" alt=""
+    /></a>
+
+    <video class="video" autoplay="autoplay" loop="loop" muted="muted">
+      <source src="{% static 'img/banner.mp4' %}" type="video/mp4" />
+    </video>
+
+    <div class="container-bg">
+      <div class="latest-news-section">
+        <div class="ln-title">Nuevo</div>
+        <div class="news-ticker">
+          <div class="news-ticker-contant">
+            <div class="nt-item">
+              <span class="new">Noticia</span> Entérate de qué Anime está de
+              moda.
+            </div>
+            <div class="nt-item">
+              <span class="strategy">Popular</span> Nuevos capítulos de Pokémon.
+            </div>
+            <div class="nt-item">
+              <span class="racing">Siguenos</span> Puedes seguirnos en nuestras
+              redes sociales.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carrusel -->
+    <div class="container-bg">
+      <div class="container bg-white">
+        <div class="row">
+          <div
+            id="carouselExampleControls"
+            class="carousel slide"
+            data-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  class="d-block w-100"
+                  src="{% static 'img/slider3.jpg' %}"
+                  alt="Hunter X Hunter"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="d-block w-100"
+                  src="{% static 'img/slider4.png' %}"
+                  alt="Dragon Ball"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="d-block w-100"
+                  src="{% static 'img/slider5.jpeg' %}"
+                  alt="Naruto"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="d-block w-100"
+                  src="{% static 'img/slider7.jpg' %}"
+                  alt="Shingeki no Kyonjin"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  class="d-block w-100"
+                  src="{% static 'img/slider8.jpg' %}"
+                  alt="Death Note"
+                />
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#carouselExampleControls"
+              role="button"
+              data-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Anterior</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#carouselExampleControls"
+              role="button"
+              data-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only">Siguiente</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Aqui termina Carrusel -->
+      </div>
+
+      <!-- Imágenes de anime -->
+      <div class="container bg-white" id="contenedor-cards">
+        <h1>Lista de Anime</h1>
+
+        <div class="row">
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="boruto-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Boruto.jpg' %}"
+                  alt="Lights"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Boruto! Naruto Next Generations</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="boku-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Bokunohero.jpg' %}"
+                  alt="Nature"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Boku No Hero Academia</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="naruto-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Naruto.jpg' %}"
+                  alt="Fjords"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Naruto Shippuden</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="bleach-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Bleach.jpg' %}"
+                  alt="Lights"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Bleach</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="zodiaco-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Caballerosdelzodiaco.jpg' %}"
+                  alt="Nature"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Caballeros del Zodiaco</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="death-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/DeathNote.jpg' %}"
+                  alt="Fjords"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Death Note</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="conan-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Detectiveconan.jpg' %}"
+                  alt="Lights"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Detective Conan</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="dbz-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/DragonBall.jpg' %}"
+                  alt="Nature"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Dragon Ball Z</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="evangelion-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Evangelion.jpg' %}"
+                  alt="Fjords"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Evangelion</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="dbs-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/DragonBallsuper.png' %}"
+                  alt="Lights"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Dragon Ball Super</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="fma-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/DragonBallsuper.png' %}"
+                  alt="Nature"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Full Metal Alchemist Brotherhood</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="hunter-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Hunterxhunter.jpg' %}"
+                  alt="Fjords"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Hunter X Hunter</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="kimetsu-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Kimetsunoyaiba.jpg' %}"
+                  alt="Lights"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Kimetsu no Yaiba</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="onepiece-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/OnePiece.jpg' %}"
+                  alt="Nature"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>One Piece</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="onepunch-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Onepunchman.jpg' %}"
+                  alt="Fjords"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>One Punch Man</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="pokemon-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Pokemon.jpg' %}"
+                  alt="Lights"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Pokémon</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="sailor-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Sailormoon.jpg' %}"
+                  alt="Nature"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Sailor Moon</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="shingeki-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Shingeki.jpg' %}"
+                  alt="Fjords"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Shingeki No Kyojin</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="noragami-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Noragami.jpg' %}"
+                  alt="Lights"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Noragami</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="seven-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/7Pecados.jpg' %}"
+                  alt="Nature"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Nanatsu no Taizai</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="jojo-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Jojo.jpg' %}"
+                  alt="Fjords"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Jojo's Bizarre Adventure</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="gintama-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Gintama.jpg' %}"
+                  alt="Lights"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Gintama</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="tokyo-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Tokyo.jpg' %}"
+                  alt="Nature"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Tokyo Ghoul</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="sao-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/SAO.jpg' %}"
+                  alt="Fjords"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Sword Art Online</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="rezero-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Rezero.jpg' %}"
+                  alt="Lights"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Re: Zero</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="black-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/BlackClover.jpg' %}"
+                  alt="Nature"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Black Clover</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="blends-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Blends.jpg' %}"
+                  alt="Fjords"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Blend S</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="sora-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Sora.jpg' %}"
+                  alt="Lights"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Sora no Otoshimono</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="game-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Nogamenolife.jpg' %}"
+                  alt="Nature"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>No Game No Life</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="fairy-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Fairytail.jpg' %}"
+                  alt="Fjords"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Fairy Tail</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="darling-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/Darling.jpg' %}"
+                  alt="Fjords"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>Darling in the Franxx</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 pt-3">
+            <div class="thumbnail card">
+              <a
+                href="javascript:void(0)"
+                style="text-decoration: none"
+                id="god-card"
+              >
+                <img
+                  class="border border-shadow"
+                  src="{% static 'img/Animes/GOD.png' %}"
+                  alt="Fjords"
+                  style="width: 100%"
+                />
+                <div class="caption">
+                  <p>The God of the HighSchool</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Descripciones -->
+      <div class="bg-white container">
+        <div class="desc container-bg" id="boruto-desc" style="display: none">
+          <div class="bg-white">
+            <div class="pt-4">
+              <div>
+                <img
+                  src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/84dc13b7-a2e7-4b45-83ec-311e72e82900/dd8a72n-21bd5a54-4730-4552-a00a-092fd232edfa.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvODRkYzEzYjctYTJlNy00YjQ1LTgzZWMtMzExZTcyZTgyOTAwXC9kZDhhNzJuLTIxYmQ1YTU0LTQ3MzAtNDU1Mi1hMDBhLTA5MmZkMjMyZWRmYS5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.pKiAP_bzXa8iKdmCpdp8yovKMOmCP13R2eCaOE0oJl0"
+                  class="img-rounded img-fluid"
+                  alt="xd"
+                />
+                <h1>Boruto! Naruto Next Generations</h1>
+                <p>
+                  En Konoha han entrado en una era de paz y modernidad. Los
+                  altos edificios despuntan en las calles, las pantallas
+                  gigantes muestran imágenes de todo tipo y los medios de
+                  transporte conectan los vairos distritos. Pese a que sigue
+                  siendo una aldea ninja, el número de civiles ha aumentado y la
+                  vida de los ninja ha cambiado. Boruto Uzumaki es hijo del
+                  Séptimo Hokage, Naruto Uzumaki, y se ha unido a la Academia
+                  Ninja para aprender. Otros estudiantes lo menosprecian de
+                  inmediato y consideran que solo está ahí por ser "hijo del
+                  Hokage" , pero pronto Boruto disipará todas esas dudas sobre
+                  él.
+                </p>
+                <!-- Aqui empieza el video -->
+                <div class="text-center">
+                  <p>Opening</p>
+                </div>
+                <div class="row">
+                  <div class="col-sm-3"></div>
+                  <div class="col-sm-6">
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe
+                        src="https://www.youtube.com/embed/48wCQXl83-s?modestbranding=1&showinfo=0"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                  </div>
+                  <div class="col-sm-3"></div>
+                </div>
+                <!-- Aqui termina el video -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="boku-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://i.pinimg.com/originals/60/c6/94/60c69468e7617c3fe670b344a34a38a2.png"
+                class="img-rounded img-fluid"
+                alt="xd"
+              />
+              <h1>Boku No Hero Academia</h1>
+              <p>
+                En un mundo en el que la mayor parte de la población nace con un
+                Don, una habilidad extraordinaria diferente en cada cual, no
+                tardaron en aparecer tanto villanos como héroes dispuestos a
+                detenerlos. Con el tiempo los héroes pasaron a ser funcionarios
+                del gobierno, estando regulados y viviendo de su trabajo, además
+                de convertirse en objeto de admiración de muchos. Ahora, ser
+                héroe es el sueño de la gran mayoría de niños, que esperan desde
+                muy pequeños a que su Don se manifieste para comenzar a entrenar
+                y soñar con convertirse en los héroes número uno.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/-77UEct0cZM?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="naruto-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://i.pinimg.com/originals/5a/b6/2e/5ab62e5c0fe60d51aa733b4e3cb1edc6.jpg"
+                class="img-rounded img-fluid"
+                alt="xd"
+              />
+              <h1>Naruto Shippuden</h1>
+              <p>
+                Naruto quiere ser el mejor ninja en la tierra. La acción
+                comienza tras los dos años y medio que el protagonista, Naruto
+                Uzumaki, ha pasado entrenando con su maestro Jiraiya. En ella
+                reaparecen todos los personajes de la serie anterior pero con
+                más experiencia y fuerza. Además, la Organización Akatsuki entra
+                en acción, tras su breve aparición en la parte anterior, y se
+                revelan sus objetivos.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/zVgKnfN9i34?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="bleach-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://www.windowsmode.com/wp-content/uploads/2020/04/4K-Bleach-Wallpaper.jpg"
+                class="img-rounded img-fluid"
+                alt="xd"
+              />
+              <h1>Bleach</h1>
+              <p>
+                Ichigo Kurosaki es un estudiante de instituto de 15 años, que
+                tiene una peculiaridad: es capaz de ver, escuchar y hablar con
+                fantasmas. Pero no sabe hasta dónde puede abarcar la
+                clasificación de espíritus, ni lo que conlleva el saberlo. Un
+                buen día una extraña chica, de pequeña estatura y que viste
+                ropas negras de samurai, entra en su cuarto. Se llama Rukia
+                Kuchiki, y es una Shinigami (Dios de la Muerte). Ante la
+                incredulidad de Ichigo, le explica que su trabajo es mandar a
+                las almas buenas o plus a un lugar llamado la Sociedad de Almas,
+                y eliminar a las almas malignas o hollows.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/dfh4JuzYNpM?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="zodiaco-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://images.alphacoders.com/675/675142.png"
+                class="img-rounded img-fluid"
+                alt="xd"
+              />
+              <h1>Caballeros del Zodiaco</h1>
+              <p>
+                Eras atrás, la diosa Atenea tenía a su servicio a unos guerreros
+                llamados Caballeros que canalizaban en su interior el poder del
+                Cosmos. Ahora, un joven llamado Seiya ha entrenado para
+                convertirse en Caballero y ha conseguido la armadura de Pegaso.
+                Ahora, luchará para Atenea acompañado por otros Caballeros.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/XkUV1Ry9q7Q?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="death-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://i.blogs.es/ed157d/230317-deathnote/1366_2000.jpg"
+                class="img-rounded img-fluid"
+                alt="xd"
+              />
+              <h1>Death Note</h1>
+              <p>
+                Un adolescente llamado Light Yagami, encuentra un cuaderno que
+                tiró un rebelde shinigami o "dios de la muerte". Cuando descubre
+                que toda persona cuyo nombre escriba en el cuaderno, muere,
+                empieza a usarlo como un justiciero para acabar con los
+                criminales. Pero, cuando las personas empiezan a morir en todas
+                partes, las autoridades empiezan a sospechar y recurren al genio
+                detective L para tratar de descubrir al asesino. Un mortal juego
+                de ingenio empieza cuando Light trata de mantenerse un paso por
+                delante de la policía, con L pisándole los talones.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/8QE9cmfxx4s?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="conan-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://images7.alphacoders.com/911/thumb-1920-911586.jpg"
+                class="img-rounded img-fluid"
+                alt="xd"
+              />
+              <h1>Detective Conan</h1>
+              <p>
+                Shinichi Kudō, un famoso detective, es envenenado por unos
+                hombres vestidos de negro, pero en vez de morir, se encoge hasta
+                tomar el aspecto de un niño de 7 años. Tras esto, Shinichi,
+                decide cambiarse el nombre por Conan Edogawa para proteger a los
+                suyos, obtener suficientes pruebas para detener a la
+                organización y encontrar una cura para volver a su tamaño
+                normal.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/ffU7CHpgTRE?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="dbz-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://images.alphacoders.com/679/679755.png"
+                class="img-rounded img-fluid"
+                alt="xd"
+              />
+              <h1>Dragon Ball Z</h1>
+              <p>
+                En esta segunda saga de Dragon ball Goku descubrirá que no es un
+                terricola, sino que pertenece a una raza de guerreros conocida
+                por ser una de las más poderosas de la galaxia, para
+                posteriormente dar paso a los verdaderos enemigos de la serie.
+                Para poder vencer a los nuevos enemigos que irán surgiendo, Goku
+                y sus amigos tendrán que viajar por otros planetas e incluso al
+                cielo y al infierno. Cada enemigo será más fuerte que el
+                anterior, por lo que tendrán que entrenar muy duro para poder
+                derrotarlos además de que se les irán uniendo nuevos personajes
+                que les ayudarán a vencerlos.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/-r27tgxNr1I?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="desc container-bg"
+          style="display: none"
+          id="evangelion-desc"
+        >
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://s2.best-wallpaper.net/wallpaper/2560x1600/1607/Neon-Genesis-Evangelion-anime-widescreen_2560x1600.jpg"
+                class="img-rounded img-fluid"
+                alt="xd"
+              />
+              <h1>Evangelion</h1>
+              <p>
+                Shinji Ikari llega a Tokio-3, buscado por su padre Gendo. A su
+                llegada, se encuentra con ejercito de la ONU tratando de detener
+                al cuarto Angel (el tercero en la versión original), Sachiel.
+                Rescatado por Misato Katsuragi, Shinji llega a los cuarteles
+                generales de NERV donde se reencontrará con su padre Gendo
+                (Supremo Comandante de NERV), con la amenaza de que si no
+                pilotaba el EVA-01 para luchar contra Sachiel, la misteriosa Rei
+                Ayanami, que se encontraba en malas condiciones, sería enviada a
+                pelear; por lo que acepta. Después de la primera batalla, en la
+                que salió victorioso, Misato lo lleva a su casa para que viva
+                con ella, vaya a la escuela y trate de tener una vida normal.
+                Tras todo esto comienzan a aparecer nuevos ángeles.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/bNBzOiavw_4?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="dbs-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://progamersassociation.com/wp-content/uploads/2019/01/DRAGON-BALL-SUPER.png"
+                class="img-rounded img-fluid"
+                alt="xd"
+              />
+              <h1>Dragon Ball Super</h1>
+              <p>
+                La serie se desarrollara en la tierra, tiempo después de la
+                lucha terrible contra Majin Buu. Por órdenes de Milk, Goku
+                trabaja fuertemente todos los días en la agricultura. Sin
+                embargo también tiene algunos momentos para entrenar. Por otra
+                parte, Mr Satan, luego de haber salvado al planeta por segunda
+                vez recibe el ¡¿Premio Mundial de la Paz?!
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/jyjOaeq6kwo?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="fma-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://anytema.files.wordpress.com/2018/10/fma.jpg"
+                class="img-rounded img-fluid"
+                alt="xd"
+              />
+              <h1>Full Metal Alchemist Brotherhood</h1>
+              <p>
+                Tras perder a su madre, Alphonse y Edward Elric tratan de
+                revivirla usando la ciencia prohibida de la alquimia humana. Sin
+                embargo, la alquimia opera bajo la teoría del cambio equivalente
+                y romper el tabú de la alquimia humana acarrea un alto precio.
+                Ed pierde una de sus piernas y Al su cuerpo. Ed logra sellar el
+                alma de Al dentro de una gran armadura, a costa de su brazo.
+                Años después, Ed (ahora con dos extremidades mecánicas) y Al
+                (aún atrapado en la armadura) dejan su casa de la niñez, cada
+                uno preocupado por la felicidad del otro. Ed, quien tuvo un
+                talento y habilidad natural para la alquimia, se convierte en un
+                alquimista con certificado nacional y pronto es conocido en
+                todas partes como el “Alquimista Fullmetal”. El verdadero
+                objetivo de ambos hermanos es buscar cualquier información sobre
+                la legendaria Piedra Filosofal, con la esperanza de que ésta les
+                permita recobrar sus cuerpos. Todas sus esperanzas descansan en
+                la mítica piedra, que incluso puede no existir.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/X59yPeVk_70?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="hunter-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://images4.alphacoders.com/917/thumb-1920-917979.jpg"
+                class="img-rounded img-fluid"
+                alt="xd"
+              />
+              <h1>Hunter X Hunter</h1>
+              <p>
+                Gon Frecks,un niño de 12 años,vive con su tia Mito y su abuela
+                en Isla Ballena, huérfano de madre y según su tía también de
+                padre. Un día Gon es atacado por un oso del bosque, pero es
+                salvado por un cazador quien le explica que está en busca de su
+                maestro para así convertirse en un cazador, el es quien le dice
+                que su padre Gin esta vivo. Enterado de esto Gon decide
+                convertirse en cazador para poder encontrar a su padre.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/faqmNf_fZlE?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="kimetsu-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://image5.uhdpaper.com/wallpaper-hd/kimetsu-no-yaiba-characters-uhdpaper.com-hd-5.1044.jpg"
+                class="img-rounded img-fluid"
+                alt="xd"
+              />
+              <h1>Kimetsu no Yaiba</h1>
+              <p>
+                Estamos en la era Taisho de Japón. Tanjiro, un joven que se gana
+                la vida vendiendo carbón, descubre un día que su familia ha sido
+                asesinada por un demonio. Para empeorar las cosas, su hermana
+                menor Nezuko, la única superviviente de la masacre, ha sufrido
+                una transformación en demonio. Destrozado por los
+                acontecimientos Tanjiro decide convertirse en un cazador de
+                demonios para poder devolver a su hermana a la normalidad y
+                matar al demonio que masacró a su familia.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/pmanD_s7G3U?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="onepiece-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://images5.alphacoders.com/606/606284.jpg"
+                class="img-rounded img-fluid"
+                alt="xd"
+              />
+              <h1>One Piece</h1>
+              <p>
+                Monkey D. Luffy, cuando tenia 7 años, comió accidentalmente una
+                Akuma no mi (Fruta del diablo) la cual le convirtió en un hombre
+                de goma. Por otra parte Gol D. Roger conocido como El rey de los
+                Piratas quien fuera ejecutado por la Marine, habló antes de
+                morir, acerca de su mayor tesoro,el "One Piece" escondido en la
+                Gran line. Esta noticia desató la gran era de los piratas
+                lanzando a incontables piratas a ese lugar, en busca del One
+                Piece el tesoro perdido. Diez años después, Luffy inspirado en
+                Gol D. Roger y un pirata de nombre Akagami no Shanks (Shanks el
+                pelirrojo) se convierte en pirata deseando ser el próximo Rey de
+                los Piratas y zarpar para conocer amigos y tener aventuras con
+                ellos, teniendo como meta encontrar el One Piece.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/CqNhRFAoCRE?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="onepunch-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://images.wallpapersden.com/image/download/one-punch-man-a-hero-nobody-knows_69466_1920x1080.jpg"
+                class="img-rounded img-fluid"
+                alt="one punch man"
+              />
+              <h1>One Punch Man</h1>
+              <p>
+                Saitama comenzó a hacer de héroe por pura afición, y tras tres
+                años de un durísimo entrenamiento consiguió tal nivel de fuerza
+                que puede acabar con cualquier enemigo de un solo puñetazo.
+                Ahora la vida emocionante que esperaba tener se ha convertido en
+                una de tedio absoluto, pero ¿habrá alguien a su nivel entre
+                todos los héroes del mundo? ¿Y un villano capaz de hacerle
+                sombra?
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/atxYe-nOa9w?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="pokemon-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://1.bp.blogspot.com/-O5ek4a6WfsI/VCEBMYDU5RI/AAAAAAAACRY/BrULDVfOhhY/s1600/Pokemon-HD-Wallpapers.jpg"
+                class="img-rounded img-fluid"
+                alt="pokemon"
+              />
+              <h1>Pokémon</h1>
+              <p>
+                Es el décimo cumpleaños de Ash, y está listo para hacer lo que
+                muchos chicos de 10 años en la región Kanto se proponen:
+                ¡convertirse en un Entrenador Pokémon! Las cosas no salieron
+                exactamente según lo planeado cuando terminó con un Pikachu en
+                lugar de un primer Pokémon estándar, y ganar Medallas de
+                Gimnasio fue mucho más duro de lo que pensó. Afortunadamente
+                tiene a los antiguos Líderes de Gimnasio Brock y Misty a su
+                lado, junto con un gran grupo de nuevos amigos Pokémon,
+                incluidos Bulbasaur, Squirtle y Charmander.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/uDIoEbbFKAY?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="sailor-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="http://cdn29.us1.fansshare.com/images/sailormoon/wpid-sailor-moon-sailor-senshi-hd-cartoon-wallpapers-465707751.jpg"
+                class="img-rounded img-fluid"
+                alt="Sailor Moon"
+              />
+              <h1>Sailor Moon</h1>
+              <p>
+                Serena Tsukino es una chica común, tiene 14 años y asiste a
+                segundo de secundaria. Siempre llega tarde a clase, olvida los
+                deberes, duerme mucho y come demasiado; pero su vida cambia
+                cuando una gata negra muy peculiar se presenta ante ella para
+                desvelarle su misión: ella es una guerrera de la Luna, Sailor
+                Moon, destinada a luchar por el amor y la justicia. Y no es la
+                única, pronto aparecerían otras chicas, Sailor Scouts, con
+                quienes entablará una amistad de toda la vida. Al lado de ellas
+                y de Tuxedo Mask (su salvador emergente) deberán vencer a la
+                Reina Beril del Negaverso y descubrir importantes señales de un
+                pasado milenario.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/Zq8_XppDXdk?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="shingeki-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://somoskudasai.com/wp-content/uploads/2018/07/Shingeki-no-Kyojin-Season-3-anime-2-1.jpg"
+                class="img-rounded img-fluid"
+                alt="Shingeki no Kyojin"
+              />
+              <h1>Shingeki No Kyojin</h1>
+              <p>
+                La historia nos traslada a un mundo en el que la humanidad
+                estuvo a punto de ser exterminada cientos de años atrás por los
+                gigantes. Los gigantes son enormes, parecen no ser inteligentes
+                y devoran seres humanos. Lo peor es que parece que lo hacen por
+                placer y no por alimentarse. Una pequeña parte de la humanidad
+                ha conseguido sobrevivir protegiéndose en una ciudad con unos
+                altísimos muros, más altos que el mayor de los gigantes. La
+                ciudad vive su vida tranquila, y hace más de 100 años que ningún
+                gigante aparece por allí. Eren y su hermana adoptiva Mikasa son
+                todavía unos adolescentes cuando ven algo horroroso: un gigante
+                mucho mayor que todos los que la humanidad había conocido hasta
+                el momento está destruyendo los muros de la ciudad. No pasa
+                mucho tiempo hasta que los gigantes entran por el hueco abierto
+                en el muro y comienzan a devorar a la gente.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/8OkpRK2_gVs?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="noragami-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://monoschinos.com/assets/img/serie/portada/noragami-aragoto-ova.jpg"
+                class="img-rounded img-fluid"
+                alt="Noragami"
+              />
+              <h1>Noragami</h1>
+              <p>
+                Sinopsis Yato es un dios menor cuyo sueño es tener una gran
+                cantidad de seguidores que lo adoren y recen plegarias por él.
+                Desafortunadamente, su sueño está lejos de hacerse realidad, ya
+                que no tiene ni siquiera un solo santuario dedicado a él. Para
+                empeorar las cosas, la única socia que tenía para ayudar a
+                resolver los problemas de la gente acaba de renunciar. Su divina
+                suerte sólo podría cambiar cuando se tropieza con Iki Hiyori,
+                quien le salva la vida. Este hecho deja a Hiyori en un buen lío
+                también, por lo que se quedará a su lado hasta que su problema
+                se resuelva. Junto a Hiyori y su nuevo socio Yukine, Yato hará
+                todo lo que pueda para ganar fama, reconocimiento y sólo tal
+                vez, una capilla dedicada a él también.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/aZenmeRytEM?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="seven-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://img.wallpapersafari.com/tablet/2560/1700/64/83/faZLGT.jpg"
+                class="img-rounded img-fluid"
+                alt="7 Pecados"
+              />
+              <h1>Nanatsu no Taizai</h1>
+              <p>
+                Los Siete Pecados Capitales representan a un grupo de caballeros
+                que fueron acusados injustamente de intentar en un momento
+                derrocar al rey de Liones. Durante la revuelta, lograron ser
+                derrotados por los caballeros sagrados desapareciendo del reino.
+                Una década después, los mismos caballeros sagrados organizaron
+                un golpe de estado, tomando prisionero al rey y
+                autodenominándose como los nuevos dueños de Liones. La princesa
+                Elizabeth logró escapar y se puso como meta buscar a los siete
+                pecados capitales, los únicos capaces de hacer frente a los
+                Caballeros Sagrados. Caballeros sagrados en latino fueron
+                nombrados como Caballeros Sacros.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/coUCoXtqPHs?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="jojo-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://images.alphacoders.com/756/thumb-1920-756708.png"
+                class="img-rounded img-fluid"
+                alt="jojo"
+              />
+              <h1>Jojo's Bizarre Adventure</h1>
+              <p>
+                La historia comienza con Jonathan Joestar, que vive con su padre
+                George en Inglaterra con un nivel económico alto. Otro chico Dio
+                Brando es adoptado por ellos dos ya que George creía que su
+                padre Dario Brando les había salvado la vida. Jonathan trata de
+                ser amigo de Dio, pero el plan de Dio es llevar a JoJo a la
+                locura y ganar la confianza de George para conventirse en el
+                heredero de la fortuna Joestar. Para lograrlo Dio golpea a
+                Jonathan, besa a su novia Erina y quema a su perro Danny, y al
+                mismo tiempo se gana la confianza de George con sus buenos
+                modales, pero eso es solo el comienzo todo se complica cuando
+                DIO se cruza con la mascara del demonio y su odio por jojo deja
+                de ser un asunto de dinero. La Historia sigue con todos los
+                sucesores de Jonathan Joestar(JoJo), hijos, nietos que comparten
+                sus ideales.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/dxmaTmLTWoU?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="gintama-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://i.redd.it/nkc8ng95ds9y.jpg"
+                class="img-rounded img-fluid"
+                alt="Gintama"
+              />
+              <h1>Gintama</h1>
+              <p>
+                La historia de Gintama nos sitúa en un Japón sometido por unas
+                criaturas alienígenas conocidas como Amantos. Gracias a estos el
+                país goza de avances tecnológicos desmedidos, pero a la vez la
+                especie humana ha sido desprendida de la autoridad de velar
+                sobre su propio planeta. Para evitar revueltas bélicas se ha
+                prohibido por completo el uso y porte de espadas en cualquier
+                circunstancia por parte de los terrícolas, pero aún así en esta
+                nueva era hay personas que se mantienen fieles a sus creencias y
+                tradiciones de antaño como es el caso del protagonista, Gintoki.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/iXpGVuaQwXo?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="tokyo-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://www.beahero.gg/wp-content/uploads/2019/10/tokyo-ghoul-re-call-to-exist-listingthumb-01-ps4-us-22aug2019.jpg"
+                class="img-rounded img-fluid"
+                alt="Tokyo Ghoul"
+              />
+              <h1>Tokyo Ghoul</h1>
+              <p>
+                La ciudad de Tokio vive atemorizada por los atroces de crímenes
+                cometidos por los Ghouls, unas misteriosas criaturas que se
+                ocultan entre sus habitantes y se alimentan de carne humana.
+                Kaneki Ken, un joven y tímido universitario sobrevive a una
+                operación de trasplante de órganos tras ser atacado y casi
+                devorado por uno de ellos; tras abandonar el hospital Kaneki
+                sufre un extraño proceso de metamorfosis que provocará un
+                inesperado giro en su vida, los órganos trasplantados
+                pertenecían al Ghoul muerto durante el ataque... ahora, mitad
+                humano y mitad Ghoul tendrá que aprender a vivir de nuevo.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/uMeR2W19wT0?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="desc container-bg" style="display: none" id="sao-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://images.alphacoders.com/996/996134.jpg"
+                class="img-rounded img-fluid"
+                alt="SAO"
+              />
+              <h1>Sword Art Online</h1>
+              <p>
+                Escapar es imposible hasta terminar el juego; un game over
+                significaría una verdadera "muerte". Sin saber la "verdad" de la
+                siguiente generación del Multijugador Masivo Online, 'Sword Art
+                Online(SAO)', con 10 mil usuarios unidos juntos abriendo las
+                cortinas para esta cruel batalla a muerte. Participando solo en
+                SAO, el protagonista Kirito ha aceptado inmediatamente la
+                "verdad" de este MMO. Y, en el mundo del juego, un gigante
+                castillo flotante llamado 'Aincrad', Kirito se distinguió a si
+                mismo como un jugador solitario. Apuntando a terminar el juego
+                al alcanzar la planta mas alta el solo continua avanzando
+                arriesgadamente hasta que recibe una invitación a la fuerza de
+                una guerrera y esgrimista experta, Asuna, con la cual tendra que
+                hacer equipo.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/mXJkI0FSXck?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="rezero-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://wallpaperaccess.com/full/1133143.jpg"
+                class="img-rounded img-fluid"
+                alt="Re: Zero"
+              />
+              <h1>Re: Zero</h1>
+              <p>
+                De repente, el estudiante de secundaria Subaru Natsuki se ve
+                transportado a otro mundo cuando estaba en una tienda. Con la
+                mayor crisis de su vida por haber sido invocado a otro mundo, y
+                sin ninguna señal de aquél que lo ha invocado, las cosas
+                empeoran cuando es atacado. Pero cuando es salvado por una
+                misteriosa chica de pelo plateado y su peculiar gato, Subaru
+                coopera con ella con tal de devolverle el favor, aunque cuando
+                se las arreglan para obtener una pista, Subaru y la chica son
+                asesinados por alguien. Subaru despierta en el lugar en el que
+                fue invocado y se da cuenta que ha ganado una habilidad:
+                "Returns by Death", convirtiéndose en un indefenso chico que
+                tiene la habilidad de volver atrás en el tiempo al morir... Más
+                allá de la desesperación de la situación ¿será capaz de salvar a
+                la chica de la muerte?
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/0Vwwr3VGsYg?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="black-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://somoskudasai.com/wp-content/uploads/2020/06/black-clover-kudasai.jpg"
+                class="img-rounded img-fluid"
+                alt="Black Clover"
+              />
+              <h1>Black Clover</h1>
+              <p>
+                Hay un mundo en donde la magia lo es todo. Asta y Yuno crecieron
+                en una iglesia, y el día que cumplieron 15 años participaron en
+                una ceremonia en donde les concedieron grimores los cuales
+                despiertan los poderes mágicos innatos. Asta y Yuno, para probar
+                sus poderes, y el honor que les fueron concedido, se lanzan en
+                una travesía para llegar a ser emperadores mágicos.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/_6KZI74zKfE?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="blends-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://wallpaperaccess.com/full/1896316.jpg"
+                class="img-rounded img-fluid"
+                alt="Blend S"
+              />
+              <h1>Blend S</h1>
+              <p>
+                Maika es una chica cuya severa mirada hace que la rechacen de
+                todos los trabajos. Su ilusión es trabajar para ganar dinero que
+                ahorrar para ir a estudiar al extranjero. Un día tiene un
+                encuentro con un joven extranjero y el destino le abre las
+                puertas. El joven le ofrece trabajo en su cafetería, ¡y ser su
+                novia! ¿El problema? Que la cafetería es una suerte de maid café
+                donde cada chica cumple un papel y el de Maika será el de la
+                chica sádica. ¿Podrá la tímida chica fingir ser una sádica? ¿O
+                podrá lograrlo de forma natural? ¡Una comedia de trabajo,
+                integración y ¿amor?!
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/ZRrauyTlT6U?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="sora-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://wallpoper.com/images/00/35/05/28/sora-no_00350528.jpg"
+                class="img-rounded img-fluid"
+                alt="Sora"
+              />
+              <h1>Sora no Otoshimono</h1>
+              <p>
+                Sakurai Tomoki es un estudiante que trata de llevar su vida en
+                paz y sin ninguna preocupación, pero siempre tiene el mismo
+                sueño, que al despertarse le hace llorar. Su amiga Sohara le
+                dice que vaya a ver a Suagata-Sempai, ya que sabe muchas cosas;
+                y este personaje le dice que tiene relación con el Nuevo
+                Continente. Qué es ese sueño qué relación tendrá con el Nuevo
+                Continente.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/pRe9A7sA6hw?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="game-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://images2.alphacoders.com/838/thumb-1920-838372.png"
+                class="img-rounded img-fluid"
+                alt="No Game No Life"
+              />
+              <h1>No Game No Life</h1>
+              <p>
+                No Game, No Life se centra en Sora y Shiro, unos hermanos cuya
+                reputación de NEETs hikikomoris y gamers han hecho que comiencen
+                a extenderse leyendas urbanas suyas por todo internet. Estos dos
+                gamers consideran que el mundo real no es más que “un juego de
+                mierda”. Un día, un chico llamado “Dios” les invoca en un mundo
+                alternativo. En este mundo, Dios ha prohibido la guerra y
+                declarado que todo se decide en base a los juegos, incluso las
+                fronteras de los países. La humanidad vive ahora en una ciudad
+                por culpa del resto de razas. Se convertirán Sora y Shiro,
+                hermano y hermana, en los salvadores de este mundo alternativo.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/6CBp4qylX6I?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="fairy-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://i.pinimg.com/originals/f9/d5/50/f9d5503cd8d90d1a8a465328206481fe.jpg"
+                class="img-rounded img-fluid"
+                alt="Fairy Tail"
+              />
+              <h1>Fairy Tail</h1>
+              <p>
+                Fairy Tail cuenta la historia de un joven mago llamado Natsu en
+                la búsqueda de su maestro y padre adoptivo Igneel que resulta
+                ser un dragón. Por ello se unió a Fairy Tail, un gremio de magos
+                que es famoso por los destrozos y daños que provocan en diversas
+                ciudades (lo cual no debería ser así). El mundo de Fairy Tail
+                gira alrededor de los magos (los cuales poco tienen que ver con
+                la idea general del mago común) que realizan encargos a cambio
+                de dinero, similar a un cazarecompensas. Natsu conoce a Lucy,
+                una guapa muchacha cuyo sueño era ingresar a un gremio de magos,
+                específicamente, a Fairy Tail, lo cual consigue gracias a la
+                ayuda de Natsu. De ahí en adelante, la historia sigue los
+                movimientos de esta pareja de magos los cuales se ven envueltos
+                en un sin número de aventuras antes de conseguir la meta final
+                de encontrar a Igneel.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/aqRuzjIBkxY?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="darling-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://images.alphacoders.com/901/thumb-1920-901450.png"
+                class="img-rounded img-fluid"
+                alt="Darling in the Franxx"
+              />
+              <h1>Darling in the Franxx</h1>
+              <p>
+                En un futuro lejano, cuando la Tierra está en ruinas y la
+                humanidad ha establecido una ciudad-fortaleza móvil bautizada
+                como “Plantación”, unos pilotos viven en Mistilteinn, la “Jaula
+                de pájaros”. Los niños viven allí sin conocer el mundo exterior
+                ni la libertad. Su vida consiste en luchar y superar misiones
+                contra unas formas de vida gigantes y misteriosas conocidas como
+                Kyouryuu. Para enfrentarse a ellos, utilizan los robots Franxx.
+                Un chico llamado Hiro está bautizado como Code:016 y, una vez,
+                fue considerado un prodigio. No obstante, se ha quedado atrás y
+                su existencia parece innecesaria. No pilotar un Franxx es igual
+                a no existir. Un día, una chica misteriosa conocida como “Zero
+                Two” aparece ante él y dos cuernos surgen de su cabeza.
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/hCzkkHwR2gg?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc container-bg" style="display: none" id="god-desc">
+          <div class="container bg-white">
+            <div class="pt-4">
+              <img
+                src="https://pbs.twimg.com/media/Ecy2mBgUwAEgycZ.jpg"
+                class="img-rounded img-fluid"
+                alt="God of the HighSchool"
+              />
+              <h1>The God of the HighSchool</h1>
+              <p>
+                Jin Mori se ha autoproclamado como el estudiante de instituto
+                más fuerte del mundo, pero su vida cambia por completo cuando le
+                invitan a participar en el "God of High School", un torneo en el
+                que se decidirá el estudiante más fuerte de todos. Para
+                convencerlo para participar le dicen que si gana podrá pedir
+                cualquier deseo... Todos los participantes son fuertes
+                contrincantes dispuestos a todo para ganar y cumplir sus deseos.
+                ¿Qué les aguarda al final del torneo? ¡Da comienzo una caótica
+                batalla entre estudiantes de instituto super fuertes!
+              </p>
+              <div class="text-center">
+                <p>Opening</p>
+              </div>
+              <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.youtube.com/embed/UW_-eBc0U7U?modestbranding=1&showinfo=0"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Boton Atrás -->
+        <div
+          class="container pt-3 text-center bg-white"
+          style="display: none"
+          id="btnatras"
+        >
+          <button type="button" class="btn btn-anime">Atrás</button>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  {% comment %} Footer {% endcomment %}
+</html>
+{% endblock %}
