@@ -1,8 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from . models import Genero, Anime, Usuario
+from . models import Galeria, Usuario
 
-admin.site.register(Anime)
-admin.site.register(Genero)
+admin.site.register(Galeria)
 admin.site.register(Usuario)

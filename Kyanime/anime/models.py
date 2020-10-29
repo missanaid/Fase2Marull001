@@ -3,26 +3,12 @@ from django.urls import reverse
 import uuid
 
 
-class Genero(models.Model):
-
-    nombre = models.CharField(max_length=200)
-
-    def get_absolute_url(self):
-        return reverse("genre-detail", args=[str(self.id)])
-
-    def __str__(self):
-        return self.nombre
-
-
-class Anime(models.Model):
+class Galeria(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     nombre_anime = models.CharField(max_length=200)
-    episodios = models.IntegerField(
-        help_text='Cantidad de Capítulos del Anime')
-    sinopsis = models.TextField(
-        max_length=1000)
-    genero = models.ManyToManyField(Genero)
+    descripcion = models.TextField(
+        help_text='Descripcion de la Imagen')
     imagen = models.ImageField(upload_to='img/Animes/', null=True, blank=True)
-    opening = models.URLField(max_length=100, default='')
 
     def __str__(self):
         return self.nombre_anime

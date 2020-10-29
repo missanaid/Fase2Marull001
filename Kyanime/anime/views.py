@@ -1,19 +1,21 @@
+from django.urls import reverse_lazy
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.shortcuts import render
-from . models import Anime, Genero, Usuario
+from . models import Galeria, Usuario
 from django.views import generic
 
 # Create your views here.
-# objects.all() es como un select
+# objects.all() es como un select * from
 # objects.filter es como un where
 
 
 def index(request):
-    num_Animes = Anime.objects.all().count()
+    num_Fotos = Galeria.objects.all().count()
 
     return render(
         request,
         'index.html',
-        context={'num_animes':  num_Animes}
+        context={'num_animes':  num_Fotos}
     )
 
 
