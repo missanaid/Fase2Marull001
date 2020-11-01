@@ -23,6 +23,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('anime/', include('anime.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 
 ]
 
