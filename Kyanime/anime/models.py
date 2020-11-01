@@ -4,30 +4,36 @@ import uuid
 
 
 class Galeria(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    id = models.UUIDField(
+        primary_key=True, default=uuid.uuid4,  editable=False)
     nombre_anime = models.CharField(max_length=200)
-    descripcion = models.TextField(
-        help_text='Descripcion de la Imagen')
-    imagen = models.ImageField(upload_to='img/Animes/', null=True, blank=True)
+    descripcion = models.TextField(max_length=1000)
+    imagen = models.ImageField(
+        upload_to='galeria/', null=True, blank=True)
+
+    class Meta:
+        ordering = ['nombre_anime']
 
     def __str__(self):
         return self.nombre_anime
 
     def get_absolute_url(self):
         """Devuelve la url para acceder a un registro detallado de el Anime."""
+        return reverse('galeria-detail', args=[str(self.id)])
+
+
+class Anime(models.Model):
+    """Model representing an author."""
+    nombre_anime = models.CharField(max_length=100)
+    episodios = models.IntegerField(default=0)
+    sinopsis = models.TextField()
+
+    class Meta:
+        ordering = ['nombre_anime']
+
+    def get_absolute_url(self):
         return reverse('anime-detail', args=[str(self.id)])
-
-
-class Usuario(models.Model):
-    nombre_usuario = models.CharField(max_length=100)
-    primer_nombre = models.CharField(max_length=100)
-    apellido = models.CharField(max_length=100)
-    password = models.CharField(max_length=100)
-    email = models.EmailField(help_text='Email de Usuario')
 
     def __str__(self):
         """String for representing the Model object."""
-        return self.nombre_usuario
-
-    def get_absolute_url(self):
-        return reverse('usuario-detail', args=[str(self.id)])
+        return self.nombre_anime

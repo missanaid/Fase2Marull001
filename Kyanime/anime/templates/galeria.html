@@ -1,11 +1,17 @@
 {% extends "base_generic.html" %} {% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
-    <!-- Scripts -->
+    <!-- Custom fonts for this theme -->
     {% load static %}
     <link
       rel="stylesheet"
@@ -15,186 +21,43 @@
     <link rel="stylesheet" href="{% static 'css/galeria.css' %}" />
   </head>
 
+  <!-- Theme CSS -->
+
   <body>
     <div class="container-bg">
       <div class="container bg-white">
         <h1>Galería de Anime uwu</h1>
 
-        <div class="row pt-4">
-          <div class="col-md-4 col-6 thumb">
-            <a
-              href="{% static 'img/Galeria/boruto.jpg' %}"
-              class="fancybox"
-              rel="ligthbox"
-            >
-              <img
-                src="{% static 'img/Galeria/boruto.jpg' %}"
-                class="zoom img-fluid"
-                alt=""
-              />
-            </a>
-            Boruto - Boruto, Sarada y Mitsuki.
-          </div>
-          <div class="col-md-4 col-6 thumb">
-            <a
-              href="{% static 'img/Galeria/boku.jpg' %}"
-              class="fancybox"
-              rel="ligthbox"
-            >
-              <img
-                src="{% static 'img/Galeria/boku.jpg' %}"
-                class="zoom img-fluid"
-                alt=""
-              />
-            </a>
-            Boku No Hero - Clase 1-A.
-          </div>
+        <div style="width: 92%; height: 50px">
+          <a
+            class="btn btn-anime"
+            href="{% url 'galeria_create' %}"
+            style="float: right; font-size: 14px"
+            >Agregar Imagen</a
+          >
+        </div>
 
+        <div class="row pt-4 galeria-estilo">
+          {% for galeria in num_fotos %}
           <div class="col-md-4 col-6 thumb">
             <a
-              href="{% static 'img/Galeria/naruto.jpg' %}"
-              class="fancybox"
+              href="{{ galeria.imagen.url}}"
+              class="fancybox fancybox-container"
               rel="ligthbox"
             >
               <img
-                src="{% static 'img/Galeria/naruto.jpg' %}"
+                src="{{ galeria.imagen.url}}"
                 class="zoom img-fluid"
-                alt=""
+                alt="{{ galeria.nombre_anime }}"
               />
             </a>
-            Naruto - Bestias con Cola (Bijuus).
-          </div>
-
-          <div class="col-md-4 col-6 thumb">
-            <a
-              href="{% static 'img/Galeria/death.jpg' %}"
-              class="fancybox"
-              rel="ligthbox"
+            <a href="{% url 'galeria-detail' galeria.pk %}">
+              <p class="card-title estilo pt-3 pl-2">
+                {{ galeria.nombre_anime }} - {{ galeria.descripcion }}
+              </p></a
             >
-              <img
-                src="{% static 'img/Galeria/death.jpg' %}"
-                class="zoom img-fluid"
-                alt=""
-              />
-            </a>
-            Death Note - Light y L.
           </div>
-
-          <div class="col-md-4 col-6 thumb">
-            <a
-              href="{% static 'img/Galeria/hunter.jpg' %}"
-              class="fancybox"
-              rel="ligthbox"
-            >
-              <img
-                src="{% static 'img/Galeria/hunter.jpg' %}"
-                class="zoom img-fluid"
-                alt=""
-              />
-            </a>
-            Hunter X Hunter - Gon, Killua, Kurapica y Leorio.
-          </div>
-
-          <div class="col-md-4 col-6 thumb">
-            <a
-              href="{% static 'img/Galeria/alchemist.jpg' %}"
-              class="fancybox"
-              rel="ligthbox"
-            >
-              <img
-                src="{% static 'img/Galeria/alchemist.jpg' %}"
-                class="zoom img-fluid"
-                alt=""
-              />
-            </a>
-            FullMetal Alchemist - Edward y Alphonse.
-          </div>
-
-          <div class="col-md-4 col-6 thumb">
-            <a
-              href="{% static 'img/Galeria/dbz.jpg' %}"
-              class="fancybox"
-              rel="ligthbox"
-            >
-              <img
-                src="{% static 'img/Galeria/dbz.jpg' %}"
-                class="zoom img-fluid"
-                alt=""
-              />
-            </a>
-            Dragon Ball Z - Saiyajins.
-          </div>
-
-          <div class="col-md-4 col-6 thumb">
-            <a
-              href="{% static 'img/Galeria/jojo.jpg' %}"
-              class="fancybox"
-              rel="ligthbox"
-            >
-              <img
-                src="{% static 'img/Galeria/jojo.jpg' %}"
-                class="zoom img-fluid"
-                alt=""
-              />
-            </a>
-            Jojo's - Jojo's Poses.
-          </div>
-          <div class="col-md-4 col-6 thumb">
-            <a
-              href="{% static 'img/Galeria/dbs.jpg' %}"
-              class="fancybox"
-              rel="ligthbox"
-            >
-              <img
-                src="{% static 'img/Galeria/dbs.jpg' %}"
-                class="zoom img-fluid"
-                alt=""
-              />
-            </a>
-            Dragon Ball Súper - Heroes y Villanos.
-          </div>
-          <div class="col-md-4 col-6 thumb">
-            <a
-              href="{% static 'img/Galeria/pokemon.png' %}"
-              class="fancybox"
-              rel="ligthbox"
-            >
-              <img
-                src="{% static 'img/Galeria/pokemon.png' %}"
-                class="zoom img-fluid"
-                alt=""
-              />
-            </a>
-            Pokémon - Ash y Pikachu.
-          </div>
-          <div class="col-md-4 col-6 thumb">
-            <a
-              href="{% static 'img/Galeria/shingeki.jpg' %}"
-              class="fancybox"
-              rel="ligthbox"
-            >
-              <img
-                src="{% static 'img/Galeria/shingeki.jpg' %}"
-                class="zoom img-fluid"
-                alt=""
-              />
-            </a>
-            Shingeki no Kyojin - Eren vs Reiner.
-          </div>
-          <div class="col-md-4 col-6 thumb">
-            <a
-              href="{% static 'img/Galeria/zodiaco.jpg' %}"
-              class="fancybox"
-              rel="ligthbox"
-            >
-              <img
-                src="{% static 'img/Galeria/zodiaco.jpg' %}"
-                class="zoom img-fluid"
-                alt=""
-              />
-            </a>
-            Caballeros del Zodiaco - Seiya, Shiryü, Shun, Ikki y Hyoga.
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>

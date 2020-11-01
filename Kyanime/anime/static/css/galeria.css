@@ -41,3 +41,13 @@ img.zoom {
 .modal-footer {
   display: none;
 }
+
+.galeria-estilo p {
+  color: black;
+}
+.galeria-estilo a :hover {
+  color: rgb(255, 81, 0);
+}
+.galeria-estilo a:link {
+  text-decoration: none;
+}
